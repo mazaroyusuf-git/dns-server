@@ -1,0 +1,18 @@
+$ORIGIN contoh.com.
+@       IN  SOA     ns1.contoh.com. admin.contoh.com. (
+                    2025080501  ; Serial
+                    7200        ; Refresh
+                    3600        ; Retry
+                    1209600     ; Expire
+                    3600        ; Minimum TTL
+                    )
+
+        IN  NS      ns1.contoh.com.
+        IN  NS      ns2.contoh.com.
+
+        IN  MX 10   mail.contoh.com.
+
+ns1     IN  A       192.168.1.1
+ns2     IN  A       192.168.1.2
+mail    IN  A       192.168.1.3
+www     IN  A       192.168.1.4
