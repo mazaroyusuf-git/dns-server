@@ -1,13 +1,9 @@
 import fs from "fs";
 import readline from "readline";
+import { processBindFile } from "./process-bind-file.js";
+import { processRr } from "./process-rr.js";
 
-async function processBindFile(filePath) {
-    const fileStream = fs.createReadStream(filePath);
-    const rl = readline.createInterface({
-        input: fileStream,
-        crlfDelay: Infinity
-    });
-}
+processBindFile(filePath);
 
 let origin;
 let ttl;
@@ -118,4 +114,8 @@ recordsType.forEach(element => {
         [rr, previousName, previousTtl] = processRr(splittedLine, containsTtl, previousTtl, previousName, origin, ttl);
         records[type].push(rr);
     }
-})
+});
+
+
+
+
